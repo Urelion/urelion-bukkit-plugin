@@ -1,0 +1,118 @@
+# Created by .ignore support plugin (hsz.mobi)
+
+### Common
+#### Temporary Files
+tmp/
+*.tmp
+
+#### Logging
+*.log
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+#### Package Files
+*.zip
+*.tar.gz
+*.rar
+
+# Output of 'npm pack'
+*.tgz
+
+#### Executables
+*.exe
+
+### Operating Systems
+#### Windows
+Thumbs.db
+Desktop.ini
+desktop.ini
+
+#### Mac OS X
+.DS_Store
+
+### Build Tools
+#### Common
+build-exe/
+
+#### Maven
+target/
+dependency-reduced-pom.xml
+build.properties
+
+#### Grunt
+# intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
+.grunt
+.tscache
+Gruntfile.js
+!**/src/**/Gruntfile.js
+
+#### Angular
+dist/
+out-tsc/
+
+### Languages
+#### Java
+bin/
+*.class
+*.jar
+*.war
+*.ear
+
+#### TypeScript
+# Typescript v1 declaration files
+typings/
+tsconfig.json
+!**/src/**/tsconfig.json
+tslint.json
+!**/src/**/tslint.json
+.eslintrc.json
+!**/src/**/.eslintrc.json
+
+#### Sass
+.sass-cache/
+
+### Frameworks
+#### Node.js
+# Dependency directories
+node_modules/
+package-lock.json
+package.json
+!**/src/**/package.json
+
+#### Android
+*.dex
+*.apk
+
+#### Apache Cordova
+platforms/
+plugins/
+www/
+
+### IDEs
+#### Common
+.editorconfig
+!**/src/**/.editorconfig
+
+#### IntelliJ IDEA
+# Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
+.idea/
+*.iml
+
+#### Visual Studio Code
+.vscode/
+
+#### Eclipse
+.project
+.classpath
+.settings/
+out/
+
+#### Android Studio
+gen/
+
+#### AWS Cloud9
+.c9/
+
+### Project specific
+default.gitignore

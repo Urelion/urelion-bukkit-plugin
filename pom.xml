@@ -1,0 +1,60 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>me.chrisswr1</groupId>
+		<artifactId>java-parent</artifactId>
+		<version>0.1.0-SNAPSHOT</version>
+	</parent>
+
+	<groupId>world.urelion</groupId>
+	<artifactId>urelion-bukkit-plugin</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<properties>
+		<project.module-root.relativedir>./</project.module-root.relativedir>
+
+		<spigot.version>1.16.5-R0.1-SNAPSHOT</spigot.version>
+	</properties>
+
+	<repositories>
+		<repository>
+			<id>general-parent</id>
+			<url>https://maven.pkg.github.com/ChrissW-R1/general-parent/</url>
+		</repository>
+		<repository>
+			<id>spigot</id>
+			<url>https://hub.spigotmc.org/nexus/content/groups/public/</url>
+		</repository>
+	</repositories>
+	<!--pluginRepositories>
+		<pluginRepository>
+			<id>general-parent</id>
+			<url>https://maven.pkg.github.com/ChrissW-R1/general-parent/</url>
+		</pluginRepository>
+	</pluginRepositories-->
+
+	<dependencies>
+		<dependency>
+			<groupId>org.spigotmc</groupId>
+			<artifactId>spigot-api</artifactId>
+			<version>${spigot.version}</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+
+	<scm>
+		<developerConnection>scm:git:https://gitlab.com/Urelion/${project.artifactId}.git</developerConnection>
+	</scm>
+
+	<!--distributionManagement>
+		<repository>
+			<id>github</id>
+			<name>GitHub Packages</name>
+			<url>https://maven.pkg.github.com/ChrissW-R1/general-parent</url>
+		</repository>
+	</distributionManagement-->
+</project>
