@@ -15,12 +15,21 @@ hs_err_pid*
 *.zip
 *.tar.gz
 *.rar
+*.7z
 
 # Output of 'npm pack'
 *.tgz
 
 #### Executables
 *.exe
+
+### SCM
+#### GitHub
+.github/
+
+#### GitLab
+.gitlab-ci.yml
+ci_settings.xml
 
 ### Operating Systems
 #### Windows

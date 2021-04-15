@@ -14,7 +14,14 @@
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
+	<organization>
+		<name>Urelion</name>
+		<url>http://urelion.world</url>
+	</organization>
+
 	<properties>
+		<project.gitlab.id>25826023</project.gitlab.id>
+		<project.module-root.artifactId>urelion-bukkit-plugin</project.module-root.artifactId>
 		<project.module-root.relativedir>./</project.module-root.relativedir>
 
 		<spigot.version>1.16.5-R0.1-SNAPSHOT</spigot.version>
@@ -23,19 +30,19 @@
 	<repositories>
 		<repository>
 			<id>general-parent</id>
-			<url>https://maven.pkg.github.com/ChrissW-R1/general-parent/</url>
+			<url>https://gitlab.com/api/v4/projects/25831549/packages/maven</url>
 		</repository>
 		<repository>
 			<id>spigot</id>
 			<url>https://hub.spigotmc.org/nexus/content/groups/public/</url>
 		</repository>
 	</repositories>
-	<!--pluginRepositories>
+	<pluginRepositories>
 		<pluginRepository>
 			<id>general-parent</id>
-			<url>https://maven.pkg.github.com/ChrissW-R1/general-parent/</url>
+			<url>https://gitlab.com/api/v4/projects/25831549/packages/maven</url>
 		</pluginRepository>
-	</pluginRepositories-->
+	</pluginRepositories>
 
 	<dependencies>
 		<dependency>
@@ -45,10 +52,6 @@
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
-
-	<scm>
-		<developerConnection>scm:git:https://gitlab.com/Urelion/${project.artifactId}.git</developerConnection>
-	</scm>
 
 	<!--distributionManagement>
 		<repository>
