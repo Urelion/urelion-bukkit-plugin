@@ -37,12 +37,6 @@
 			<url>https://hub.spigotmc.org/nexus/content/groups/public/</url>
 		</repository>
 	</repositories>
-	<pluginRepositories>
-		<pluginRepository>
-			<id>general-parent</id>
-			<url>https://gitlab.com/api/v4/projects/25831549/packages/maven</url>
-		</pluginRepository>
-	</pluginRepositories>
 
 	<dependencies>
 		<dependency>
@@ -52,12 +46,4 @@
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
-
-	<!--distributionManagement>
-		<repository>
-			<id>github</id>
-			<name>GitHub Packages</name>
-			<url>https://maven.pkg.github.com/ChrissW-R1/general-parent</url>
-		</repository>
-	</distributionManagement-->
 </project>
