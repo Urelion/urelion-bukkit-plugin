@@ -9,21 +9,31 @@
 		<version>0.1.0-SNAPSHOT</version>
 	</parent>
 
+	<!-- project identifier -->
 	<groupId>world.urelion</groupId>
 	<artifactId>urelion-bukkit-plugin</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
+	<!-- project metadata -->
+	<name>Urelion Bukkit Plugin</name>
+	<description>
+		Default parent of all Bukkit plugins, developed by the Urelion Team
+	</description>
+	<inceptionYear>2021</inceptionYear>
+
 	<organization>
 		<name>Urelion</name>
-		<url>http://urelion.world</url>
+		<url>https://urelion.world</url>
 	</organization>
 
 	<properties>
+		<!-- technically-based properties -->
 		<project.gitlab.id>25826023</project.gitlab.id>
 		<project.module-root.artifactId>urelion-bukkit-plugin</project.module-root.artifactId>
 		<project.module-root.relativedir>./</project.module-root.relativedir>
 
+		<!-- dependency versions -->
 		<spigot.version>1.16.5-R0.1-SNAPSHOT</spigot.version>
 	</properties>
 
@@ -46,6 +56,7 @@
 	</repositories>
 
 	<dependencies>
+		<!-- provided dependencies -->
 		<dependency>
 			<groupId>org.spigotmc</groupId>
 			<artifactId>spigot-api</artifactId>
