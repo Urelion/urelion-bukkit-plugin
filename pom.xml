@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
@@ -36,6 +36,7 @@
 
 		<!-- dependency versions -->
 		<spigot.version>1.16.5-R0.1-SNAPSHOT</spigot.version>
+		<bstats.version>2.2.1</bstats.version>
 	</properties>
 
 	<distributionManagement>
@@ -64,5 +65,38 @@
 			<version>${spigot.version}</version>
 			<scope>provided</scope>
 		</dependency>
+
+		<!-- default dependencies -->
+		<dependency>
+			<groupId>org.bstats</groupId>
+			<artifactId>bstats-bukkit</artifactId>
+			<version>${bstats.version}</version>
+		</dependency>
 	</dependencies>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<artifactId>maven-shade-plugin</artifactId>
+					<configuration>
+						<relocations combine.children="append">
+							<relocation>
+								<pattern>org.bstats</pattern>
+								<shadedPattern>${java.rootPackage}</shadedPattern>
+							</relocation>
+						</relocations>
+					</configuration>
+					<executions>
+						<execution>
+							<phase>package</phase>
+							<goals>
+								<goal>shade</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
 </project>
