@@ -37,6 +37,7 @@
 		<!-- dependency versions -->
 		<spigot.version>1.16.5-R0.1-SNAPSHOT</spigot.version>
 		<bstats.version>2.2.1</bstats.version>
+		<vault.version>1.7</vault.version>
 	</properties>
 
 	<distributionManagement>
@@ -53,7 +54,12 @@
 		</repository>
 		<repository>
 			<id>spigot</id>
-			<url>https://hub.spigotmc.org/nexus/content/groups/public/</url>
+			<url>https://hub.spigotmc.org/nexus/content/groups/public</url>
+		</repository>
+		<repository>
+			<!-- used for VaultAPI -->
+			<id>jitpack.io</id>
+			<url>https://jitpack.io</url>
 		</repository>
 	</repositories>
 
@@ -63,6 +69,12 @@
 			<groupId>org.spigotmc</groupId>
 			<artifactId>spigot-api</artifactId>
 			<version>${spigot.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.github.MilkBowl</groupId>
+			<artifactId>VaultAPI</artifactId>
+			<version>${vault.version}</version>
 			<scope>provided</scope>
 		</dependency>
 
