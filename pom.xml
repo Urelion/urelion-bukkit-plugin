@@ -38,6 +38,10 @@
 		<spigot.version>1.16.5-R0.1-SNAPSHOT</spigot.version>
 		<bstats.version>2.2.1</bstats.version>
 		<vault.version>1.7</vault.version>
+
+		<spigot.javadoc-url>https://hub.spigotmc.org/javadocs/bukkit</spigot.javadoc-url>
+		<bstats.javadoc-url>https://javadoc.io/doc/org.bstats/bstats-bukkit/${bstats.version}</bstats.javadoc-url>
+		<vault.javadoc-url>http://milkbowl.github.io/VaultAPI</vault.javadoc-url>
 	</properties>
 
 	<distributionManagement>
@@ -107,6 +111,16 @@
 							</goals>
 						</execution>
 					</executions>
+				</plugin>
+				<plugin>
+					<artifactId>maven-javadoc-plugin</artifactId>
+					<configuration>
+						<links combine.children="append">
+							<link>${spigot.javadoc-url}</link>
+							<link>${bstats.javadoc-url}</link>
+							<link>${vault.javadoc-url}</link>
+						</links>
+					</configuration>
 				</plugin>
 			</plugins>
 		</pluginManagement>
