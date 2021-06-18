@@ -35,7 +35,7 @@
 		<project.module-root.relativedir>./</project.module-root.relativedir>
 
 		<!-- dependency versions -->
-		<spigot.version>1.16.5-R0.1-SNAPSHOT</spigot.version>
+		<spigot.version>1.17-R0.1-SNAPSHOT</spigot.version>
 		<bstats.version>2.2.1</bstats.version>
 		<vault.version>1.7</vault.version>
 
