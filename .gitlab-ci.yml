@@ -1,11 +1,11 @@
 maven_build:
     image:  maven:3-jdk-8
-    script: mvn -B clean site-deploy install deploy -DfullBuild -s ci_settings.xml -P clean-dependencies,!sign-artifacts
+    script: mvn -B clean install deploy site -DfullBuild -s ci_settings.xml -P clean-dependencies,!sign-artifacts
     only:
         - master
 
 maven_release:
     image:  maven:3-jdk-8
-    script: mvn -B clean release:prepare release:perform -DfullBuild -s ci_settings.xml -P clean-dependencies,!sign-artifacts
+    script: mvn -B clean release:prepare release:perform site -DfullBuild -s ci_settings.xml -P clean-dependencies,!sign-artifacts
     only:
         - release
