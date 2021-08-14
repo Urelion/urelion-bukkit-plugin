@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>me.chrisswr1</groupId>
 		<artifactId>java-parent</artifactId>
-		<version>0.1.0-SNAPSHOT</version>
+		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 
 	<!-- project identifier -->
@@ -35,9 +35,9 @@
 		<project.module-root.relativedir>./</project.module-root.relativedir>
 
 		<!-- dependency versions -->
-		<spigot.version>1.17-R0.1-SNAPSHOT</spigot.version>
+		<spigot.version>1.17.1-R0.1-SNAPSHOT</spigot.version>
 		<bstats.version>2.2.1</bstats.version>
-		<vault.version>1.7</vault.version>
+		<vault.version>1.7.1</vault.version>
 
 		<spigot.javadoc-url>https://hub.spigotmc.org/javadocs/bukkit</spigot.javadoc-url>
 		<bstats.javadoc-url>https://javadoc.io/doc/org.bstats/bstats-bukkit/${bstats.version}</bstats.javadoc-url>
