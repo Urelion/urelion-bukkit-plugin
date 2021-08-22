@@ -39,6 +39,7 @@
 		<bstats.version>2.2.1</bstats.version>
 		<vault.version>1.7.1</vault.version>
 
+		<!-- JavaDoc URLs -->
 		<spigot.javadoc-url>https://hub.spigotmc.org/javadocs/bukkit</spigot.javadoc-url>
 		<bstats.javadoc-url>https://javadoc.io/doc/org.bstats/bstats-bukkit/${bstats.version}</bstats.javadoc-url>
 		<vault.javadoc-url>http://milkbowl.github.io/VaultAPI</vault.javadoc-url>
