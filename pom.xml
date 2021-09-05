@@ -34,6 +34,10 @@
 		<project.module-root.artifactId>urelion-bukkit-plugin</project.module-root.artifactId>
 		<project.module-root.relativedir>./</project.module-root.relativedir>
 
+		<!-- project-specific properties -->
+		<plugin.name>${project.artifactId}</plugin.name>
+		<bukkit.api.version>1.17</bukkit.api.version>
+
 		<!-- dependency versions -->
 		<spigot.version>1.17.1-R0.1-SNAPSHOT</spigot.version>
 		<bstats.version>2.2.1</bstats.version>

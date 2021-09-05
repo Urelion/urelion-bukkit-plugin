@@ -1,0 +1,4 @@
+name:        ${plugin.name}
+version:     ${project.version}
+main:        ${mainClass.fullPath}
+api-version: ${bukkit.api.version}
