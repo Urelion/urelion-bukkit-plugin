@@ -132,5 +132,10 @@
 				</plugin>
 			</plugins>
 		</pluginManagement>
+		<plugins>
+			<plugin>
+				<artifactId>maven-shade-plugin</artifactId>
+			</plugin>
+		</plugins>
 	</build>
 </project>
