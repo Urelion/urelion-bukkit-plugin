@@ -68,6 +68,11 @@
 			<url>https://hub.spigotmc.org/nexus/content/groups/public</url>
 		</repository>
 		<repository>
+			<id>paper</id>
+			<name>PaperMC</name>
+			<url>https://papermc.io/repo/repository/maven-public</url>
+		</repository>
+		<repository>
 			<!-- used for VaultAPI -->
 			<id>jitpack</id>
 			<name>JitPack</name>
