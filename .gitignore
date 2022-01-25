@@ -123,5 +123,8 @@ gen/
 #### AWS Cloud9
 .c9/
 
+#### Safe Software FME
+*.fmw.recover
+
 ### Project specific
 default.gitignore
