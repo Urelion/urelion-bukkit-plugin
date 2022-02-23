@@ -40,7 +40,7 @@
 
 		<!-- dependency versions -->
 		<spigot.version>1.18.1-R0.1-SNAPSHOT</spigot.version>
-		<bstats.version>2.2.1</bstats.version>
+		<bstats.version>3.0.0</bstats.version>
 		<vault.version>1.7.1</vault.version>
 
 		<!-- JavaDoc URLs -->

@@ -13,15 +13,20 @@ hs_err_pid*
 
 #### Package Files
 *.zip
+*.tar
 *.tar.gz
+*.gz
 *.rar
 *.7z
+*.iso
+*.dmg
 
 # Output of 'npm pack'
 *.tgz
 
 #### Executables
 *.exe
+*.dll
 
 ### SCM
 #### GitHub
@@ -80,6 +85,9 @@ tslint.json
 
 #### Sass
 .sass-cache/
+
+#### C++
+*.o
 
 ### Frameworks
 #### Node.js
