@@ -142,10 +142,26 @@
 				</plugin>
 			</plugins>
 		</pluginManagement>
-		<plugins>
-			<plugin>
-				<artifactId>maven-shade-plugin</artifactId>
-			</plugin>
-		</plugins>
 	</build>
+
+	<profiles>
+		<profile>
+			<id>shade</id>
+			<activation>
+				<file>
+					<exists>src/main/java</exists>
+				</file>
+				<property>
+					<name>fullBuild</name>
+				</property>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-shade-plugin</artifactId>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 </project>
