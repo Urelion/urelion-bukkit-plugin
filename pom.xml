@@ -102,6 +102,16 @@
 		<pluginManagement>
 			<plugins>
 				<plugin>
+					<groupId>com.github.wvengen</groupId>
+					<artifactId>proguard-maven-plugin</artifactId>
+					<configuration>
+						<options combine.children="append">
+							<option>-keepattributes RuntimeVisibleAnnotations</option>
+							<option>-keepclassmembers class ** implements org.bukkit.event.Listener { @org.bukkit.event.EventHandler public *; }</option>
+						</options>
+					</configuration>
+				</plugin>
+				<plugin>
 					<artifactId>maven-shade-plugin</artifactId>
 					<configuration>
 						<relocations combine.children="append">
