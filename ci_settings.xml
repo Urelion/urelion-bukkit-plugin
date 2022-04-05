@@ -17,7 +17,7 @@
 		<server>
 			<id>project-site-repo</id>
 			<username>mvnsiteuploader</username>
-			<password>${mvnsiteuploader}</password>
+			<password>${env.mvnsiteuploader_password}</password>
 		</server>
 	</servers>
 </settings>
