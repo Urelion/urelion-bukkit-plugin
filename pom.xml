@@ -107,7 +107,7 @@
 					<configuration>
 						<options combine.children="append">
 							<option>-keepattributes RuntimeVisibleAnnotations</option>
-							<option>-keepclassmembers class ** implements org.bukkit.event.Listener { @org.bukkit.event.EventHandler public *; }</option>
+							<option>-keepclassmembers class * implements org.bukkit.event.Listener { @org.bukkit.event.EventHandler public *; }</option>
 						</options>
 					</configuration>
 				</plugin>
