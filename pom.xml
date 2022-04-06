@@ -36,6 +36,7 @@
 
 		<!-- project-specific properties -->
 		<plugin.name>${project.artifactId}</plugin.name>
+		<mainClass.localPath>${plugin.name}Plugin</mainClass.localPath>
 		<bukkit.api.version>1.17</bukkit.api.version>
 
 		<!-- dependency versions -->
