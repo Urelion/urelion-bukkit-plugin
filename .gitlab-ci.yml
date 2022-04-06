@@ -1,6 +1,6 @@
 maven_build:
     image:  maven:3-jdk-8
-    script: mvn -B clean install deploy site-deploy -DfullBuild -s ci_settings.xml -P clean-dependencies,!sign-artifacts,!obfuscate
+    script: mvn -B clean install deploy site-deploy -DfullBuild -s ci_settings.xml -P clean-dependencies,!sign-artifacts
     only:
         - main
 
