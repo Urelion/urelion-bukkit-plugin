@@ -35,6 +35,7 @@
 		<project.module-root.relativedir>./</project.module-root.relativedir>
 
 		<!-- project-specific properties -->
+		<plugin.name>${project.artifactId}</plugin.name>
 		<mainClass.localPath>${plugin.name}Plugin</mainClass.localPath>
 		<bukkit.api.version>1.17</bukkit.api.version>
 
@@ -101,26 +102,6 @@
 	<build>
 		<pluginManagement>
 			<plugins>
-				<plugin>
-					<groupId>org.codehaus.mojo</groupId>
-					<artifactId>build-helper-maven-plugin</artifactId>
-					<executions>
-						<execution>
-							<id>plugin-name-property</id>
-							<goals>
-								<goal>regex-property</goal>
-							</goals>
-							<phase>validate</phase>
-							<configuration>
-								<name>plugin.name</name>
-								<value>${project.name}</value>
-								<regex>[^a-z,A-Z,0-9,_]+</regex>
-								<replacement>-</replacement>
-								<failIfNoMatch>false</failIfNoMatch>
-							</configuration>
-						</execution>
-					</executions>
-				</plugin>
 				<plugin>
 					<groupId>com.github.wvengen</groupId>
 					<artifactId>proguard-maven-plugin</artifactId>
