@@ -107,6 +107,7 @@
 					<artifactId>proguard-maven-plugin</artifactId>
 					<configuration>
 						<options combine.children="append">
+							<!-- keep event handling objects -->
 							<option>-keepclassmembers class * implements org.bukkit.event.Listener { @org.bukkit.event.EventHandler public *; }</option>
 						</options>
 					</configuration>
