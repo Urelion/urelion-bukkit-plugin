@@ -5,8 +5,12 @@ maven_build:
         - main
 
 maven_release:
-    image:  maven:3-jdk-8
-    script: mvn -B clean release:prepare release:perform site-deploy -DfullBuild -s ci_settings.xml -P clean-dependencies,!sign-artifacts
+    image: maven:3-jdk-8
+    script:
+        - git config user.email "${GITLAB_USER_EMAIL}"
+        - git config user.name "${GITLAB_USER_NAME}"
+        - git checkout -B "${CI_BUILD_REF_NAME}"
+        - mvn -B clean release:prepare release:perform site-deploy -DfullBuild -s ci_settings.xml -P clean-dependencies,!sign-artifacts -Dusername=${ci_git_user} -Dpassword=${ci_git_token}
     only:
         - release
 
@@ -23,4 +27,4 @@ sast:
         SAST_JAVA_VERSION: 8
 
 include:
-    -   template: Security/SAST.gitlab-ci.yml
+    - template: Security/SAST.gitlab-ci.yml
