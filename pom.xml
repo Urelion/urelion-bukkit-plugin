@@ -50,6 +50,12 @@
 		<vault.javadoc-url>http://milkbowl.github.io/VaultAPI</vault.javadoc-url>
 	</properties>
 
+	<scm>
+		<url>https://gitlab.com/${project.organization.name}/${project.module-root.artifactId}</url>
+		<connection>scm:git:${project.scm.url}.git</connection>
+		<developerConnection>${project.scm.connection}</developerConnection>
+	</scm>
+
 	<distributionManagement>
 		<site>
 			<id>project-site-repo</id>
