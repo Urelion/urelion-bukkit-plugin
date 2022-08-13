@@ -10,7 +10,7 @@ maven_release:
         - git config user.email "${GITLAB_USER_EMAIL}"
         - git config user.name "${GITLAB_USER_NAME}"
         - git checkout -B "${CI_BUILD_REF_NAME}"
-        - mvn -B clean release:prepare release:perform site-deploy -DfullBuild -s ci_settings.xml -P clean-dependencies,!sign-artifacts -Dusername=${ci_git_user} -Dpassword=${ci_git_token}
+        - mvn -B clean release:prepare release:perform site-deploy -DfullBuild -s ci_settings.xml -P clean-dependencies,!sign-artifacts -DreleaseProfiles=clean-dependencies,!sign-artifacts -Dusername=${ci_git_user} -Dpassword=${ci_git_token}
     only:
         - release
 
