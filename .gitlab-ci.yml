@@ -1,18 +1,32 @@
+.gpg_init: &gpg_init |
+                     function gpg_key() {
+                              cat ${gpg_private_key} | gpg --batch --import > /dev/null
+                              echo ${gpg_passphrase} | gpg --batch --always-trust --yes --passphrase-fd 0 --pinentry-mode=loopback -s $(mktemp) > /dev/null
+                     }
+                     gpg_key
+
+before_script:
+    - git config user.email "${GITLAB_USER_EMAIL}"
+    - git config user.name "${GITLAB_USER_NAME}"
+
 maven_build:
     image:  maven:3-jdk-8
-    script: mvn -B clean install deploy site-deploy -DfullBuild -s ci_settings.xml -P clean-dependencies,!sign-artifacts
+    before_script:
+        - *gpg_init
+    script: mvn -B clean install deploy site-deploy -DfullBuild -s ci_settings.xml -P clean-dependencies
     only:
         - main
 
 maven_release:
     image: maven:3-jdk-8
+    before_script:
+        - *gpg_init
     script:
-        - git config user.email "${GITLAB_USER_EMAIL}"
-        - git config user.name "${GITLAB_USER_NAME}"
         - git checkout -B "${CI_BUILD_REF_NAME}"
-        - mvn -B clean release:prepare release:perform site-deploy -DfullBuild -s ci_settings.xml -P clean-dependencies,!sign-artifacts -DreleaseProfiles=clean-dependencies,!sign-artifacts -Dusername=${ci_git_user} -Dpassword=${ci_git_token}
+        - mvn -B clean release:prepare release:perform site-deploy -DfullBuild -s ci_settings.xml -P clean-dependencies -DreleaseProfiles=clean-dependencies -Dusername=${ci_git_user} -Dpassword=${ci_git_token}
     only:
         - release
+
 
 # You can override the included template(s) by including variable overrides
 # SAST customization: https://docs.gitlab.com/ee/user/application_security/sast/#customizing-the-sast-settings

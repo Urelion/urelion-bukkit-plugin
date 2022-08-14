@@ -19,5 +19,9 @@
 			<username>mvnsiteuploader</username>
 			<password>${env.mvnsiteuploader_password}</password>
 		</server>
+		<server>
+			<id>gpg.passphrase</id>
+			<passphrase>${env.gpg_passphrase}</passphrase>
+		</server>
 	</servers>
 </settings>
