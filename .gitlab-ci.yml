@@ -5,9 +5,10 @@
                      }
                      gpg_key
 
-before_script:
-    - git config user.email "${GITLAB_USER_EMAIL}"
-    - git config user.name "${GITLAB_USER_NAME}"
+default:
+    before_script:
+        - git config user.email "${GITLAB_USER_EMAIL}"
+        - git config user.name "${GITLAB_USER_NAME}"
 
 maven_build:
     image:  maven:3-jdk-8
