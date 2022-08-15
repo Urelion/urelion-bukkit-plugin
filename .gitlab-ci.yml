@@ -11,7 +11,7 @@ maven_build:
     image:  maven:3-jdk-8
     before_script:
         - *maven_init
-    script: mvn -B clean install deploy site-deploy -DfullBuild -s ci_settings.xml -P clean-dependencies -Dgpg.keyname=${gpg_keyid}
+    script: mvn -B clean install deploy site-deploy -U -DfullBuild -s ci_settings.xml -P clean-dependencies -Dgpg.keyname=${gpg_keyid}
     only:
         - main
 
@@ -21,7 +21,7 @@ maven_release:
         - *maven_init
     script:
         - git checkout -B "${CI_BUILD_REF_NAME}"
-        - mvn -B clean release:prepare release:perform site-deploy -DfullBuild -s ci_settings.xml -P clean-dependencies -Dgpg.keyname=${gpg_keyid} -Dusername=${ci_git_user} -Dpassword=${ci_git_token}
+        - mvn -B clean release:prepare release:perform site-deploy -U -DfullBuild -s ci_settings.xml -P clean-dependencies -Dgpg.keyname=${gpg_keyid} -Dusername=${ci_git_user} -Dpassword=${ci_git_token}
     only:
         - release
 
