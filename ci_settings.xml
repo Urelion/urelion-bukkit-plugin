@@ -24,4 +24,16 @@
 			<passphrase>${env.gpg_passphrase}</passphrase>
 		</server>
 	</servers>
+
+	<profiles>
+		<profile>
+			<id>gpg-key</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<gpg.keyname>${env.gpg_keyid}</gpg.keyname>
+			</properties>
+		</profile>
+	</profiles>
 </settings>
