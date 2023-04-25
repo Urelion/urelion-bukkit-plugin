@@ -26,7 +26,7 @@ maven_release:
         - git checkout -B "${CI_BUILD_REF_NAME}"
         - mvn -B clean release:prepare release:perform -s ci_settings.xml -Dusername=${ci_git_user} -Dpassword=${ci_git_token} -DignoreSnapshots=true
     only:
-        - /^(release)|(version\/[^/]+\/release)$/
+        - /^(release)|(version\/release\/[^/]+)$/
 
 
 # You can override the included template(s) by including variable overrides
