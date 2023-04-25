@@ -47,7 +47,7 @@
 		<!-- JavaDoc URLs -->
 		<spigot.javadoc-url>https://hub.spigotmc.org/javadocs/bukkit</spigot.javadoc-url>
 		<bstats.javadoc-url>https://javadoc.io/doc/org.bstats/bstats-bukkit/${bstats.version}</bstats.javadoc-url>
-		<vault.javadoc-url>http://milkbowl.github.io/VaultAPI</vault.javadoc-url>
+		<vault.javadoc-url>https://milkbowl.github.io/VaultAPI</vault.javadoc-url>
 	</properties>
 
 	<scm>
