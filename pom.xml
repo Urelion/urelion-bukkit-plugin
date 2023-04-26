@@ -143,6 +143,9 @@
 						<options combine.children="append">
 							<!-- keep event handling objects -->
 							<option>-keepclassmembers class * implements org.bukkit.event.Listener { @org.bukkit.event.EventHandler public *; }</option>
+							<!-- keep Citizens API objects -->
+							<option>-keep @net.citizensnpcs.api.trait.TraitName public class * extends net.citizensnpcs.api.trait.Trait</option>
+							<option>-keepclassmembers class * extends net.citizensnpcs.api.trait.Trait { @net.citizensnpcs.api.persistence.Persist *; }</option>
 						</options>
 					</configuration>
 				</plugin>
