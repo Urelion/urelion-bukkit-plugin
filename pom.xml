@@ -42,7 +42,6 @@
 
 		<!-- dependency versions -->
 		<spigot.version>1.19.4-R0.1-SNAPSHOT</spigot.version>
-		<plugin-annotations.version>1.2.3-SNAPSHOT</plugin-annotations.version>
 		<bstats.version>3.0.2</bstats.version>
 		<vault.version>1.7.1</vault.version>
 
@@ -117,12 +116,6 @@
 			<groupId>org.spigotmc</groupId>
 			<artifactId>spigot-api</artifactId>
 			<version>${spigot.version}</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.spigotmc</groupId>
-			<artifactId>plugin-annotations</artifactId>
-			<version>${plugin-annotations.version}</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
