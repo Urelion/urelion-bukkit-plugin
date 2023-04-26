@@ -53,6 +53,9 @@ build-exe/
 target/
 dependency-reduced-pom.xml
 build.properties
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
 
 #### Grunt
 # intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
@@ -114,7 +117,9 @@ www/
 #### IntelliJ IDEA
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 .idea/
+*.iws
 *.iml
+*.ipr
 
 #### Visual Studio Code
 .vscode/
@@ -122,8 +127,23 @@ www/
 #### Eclipse
 .project
 .classpath
+.settings
+.apt_generated
+.factorypath
+.springBeans
+.sts4-cache
 .settings/
 out/
+
+#### NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
 
 #### Android Studio
 gen/

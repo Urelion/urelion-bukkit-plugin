@@ -33,6 +33,7 @@
 		<project.gitlab.id>25826023</project.gitlab.id>
 		<project.module-root.artifactId>urelion-bukkit-plugin</project.module-root.artifactId>
 		<project.module-root.relativedir>./</project.module-root.relativedir>
+		<bukkit-server.plugins.dir>${bukkit-server.base.dir}/plugins</bukkit-server.plugins.dir>
 
 		<!-- project-specific properties -->
 		<plugin.name>${project.artifactId}</plugin.name>
@@ -193,6 +194,33 @@
 				<plugins>
 					<plugin>
 						<artifactId>maven-shade-plugin</artifactId>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>bukkit-deploy</id>
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<executions>
+							<execution>
+								<phase>install</phase>
+								<goals>
+									<goal>run</goal>
+								</goals>
+								<configuration>
+									<target>
+										<mkdir dir="${bukkit-server.plugins.dir}" />
+										<copy todir="${bukkit-server.plugins.dir}">
+											<fileset dir="${project.build.directory}"
+													 includes="${project.build.finalName}.${project.packaging}" />
+										</copy>
+									</target>
+								</configuration>
+							</execution>
+						</executions>
 					</plugin>
 				</plugins>
 			</build>
