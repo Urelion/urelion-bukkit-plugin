@@ -3,6 +3,9 @@ version:     ${project.version}
 main:        ${mainClass.fullPath}
 api-version: ${bukkit.api.version}
 
+description: ${project.description}
+website:     ${project.url}
+
 libraries:
     - org.projectlombok:lombok:${lombok.version}
     - com.github.peichhorn:lombok-pg:${lombok-pg.version}
