@@ -8,13 +8,13 @@
                          maven_init
 
 variables:
-    MAVEN_OPTS: "-DfullBuild -Dorg.slf4j.simpleLogger.showDateTime=true -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss,SSS"
+    MAVEN_OPTS: "-Dorg.slf4j.simpleLogger.showDateTime=true -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss,SSS"
 
 maven_build:
     image:  maven:3-jdk-8
     before_script:
         - *maven_init
-    script: mvn -B clean install deploy site-deploy -s ci_settings.xml
+    script: mvn -B clean install deploy site-deploy -DfullBuild -s ci_settings.xml
     only:
         - /^(main)|(version\/[^/]+)$/
 
@@ -24,7 +24,7 @@ maven_release:
         - *maven_init
     script:
         - git checkout -B "${CI_BUILD_REF_NAME}"
-        - mvn -B clean release:prepare release:perform -s ci_settings.xml -Dusername=${ci_git_user} -Dpassword=${ci_git_token} -DignoreSnapshots=true
+        - mvn -B clean release:prepare release:perform -DfullBuild -s ci_settings.xml -Dusername=${ci_git_user} -Dpassword=${ci_git_token} -DignoreSnapshots=true
     only:
         - /^(release)|(version\/release\/[^/]+)$/
 
