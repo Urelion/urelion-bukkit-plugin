@@ -44,6 +44,7 @@
 		<spigot.version>1.19.4-R0.1-SNAPSHOT</spigot.version>
 		<bstats.version>3.0.2</bstats.version>
 		<vault.version>1.7.1</vault.version>
+		<watchwolf.version>0.1.16</watchwolf.version>
 
 		<!-- JavaDoc URLs -->
 		<spigot.javadoc-url>https://hub.spigotmc.org/javadocs/bukkit</spigot.javadoc-url>
@@ -130,6 +131,14 @@
 			<groupId>org.bstats</groupId>
 			<artifactId>bstats-bukkit</artifactId>
 			<version>${bstats.version}</version>
+		</dependency>
+
+		<!-- test dependencies -->
+		<dependency>
+			<groupId>com.github.rogermiranda1000</groupId>
+			<artifactId>WatchWolf-Tester</artifactId>
+			<version>${watchwolf.version}</version>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 
