@@ -1,0 +1,8 @@
+server-type:
+    - Spigot:
+        - "1.17"
+
+users:
+    - "MinecraftGamer_Z"
+
+plugin: "${project.build.directory}/${project.build.artifactFileName}"
