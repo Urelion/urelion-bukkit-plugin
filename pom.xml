@@ -33,7 +33,6 @@
 		<project.gitlab.id>25826023</project.gitlab.id>
 		<project.module-root.artifactId>urelion-bukkit-plugin</project.module-root.artifactId>
 		<project.module-root.relativedir>./</project.module-root.relativedir>
-		<bukkit-server.plugins.dir>${bukkit-server.base.dir}/plugins</bukkit-server.plugins.dir>
 
 		<!-- project-specific properties -->
 		<plugin.name>${project.artifactId}</plugin.name>
