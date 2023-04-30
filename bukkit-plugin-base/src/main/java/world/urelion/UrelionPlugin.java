@@ -2,8 +2,10 @@ package world.urelion;
 
 import lombok.extern.slf4j.Slf4j;
 import org.bukkit.plugin.java.JavaPlugin;
+import proguard.annotation.Keep;
 
 @Slf4j
+@Keep
 public abstract class UrelionPlugin
 extends JavaPlugin {
 	@Override
@@ -49,6 +51,7 @@ extends JavaPlugin {
 		UrelionPlugin.log.debug("Plugin disabling finished.");
 	}
 
+	@Keep
 	public void beforeLoad() {
 		UrelionPlugin.log.info("Loading " + this.getName() + "...");
 
@@ -56,16 +59,19 @@ extends JavaPlugin {
 		super.onLoad();
 	}
 
+	@Keep
 	public void whileLoad() {
 		UrelionPlugin.log.debug(
 			this.getName() + " has no specific loading sequence!"
 		);
 	}
 
+	@Keep
 	public void afterLoad() {
 		UrelionPlugin.log.info(this.getName() + " loaded.");
 	}
 
+	@Keep
 	public void beforeEnable() {
 		UrelionPlugin.log.info("Enabling " + this.getName() + "...");
 
@@ -73,16 +79,19 @@ extends JavaPlugin {
 		super.onEnable();
 	}
 
+	@Keep
 	public void whileEnable() {
 		UrelionPlugin.log.debug(
 			this.getName() + " has no specific enabling sequence!"
 		);
 	}
 
+	@Keep
 	public void afterEnable() {
 		UrelionPlugin.log.info(this.getName() + " enabled.");
 	}
 
+	@Keep
 	public void beforeDisable() {
 		UrelionPlugin.log.info("Disabling " + this.getName() + "...");
 
@@ -90,12 +99,14 @@ extends JavaPlugin {
 		super.onDisable();
 	}
 
+	@Keep
 	public void whileDisable() {
 		UrelionPlugin.log.debug(
 			this.getName() + " has no specific disabling sequence!"
 		);
 	}
 
+	@Keep
 	public void afterDisable() {
 		UrelionPlugin.log.info(this.getName() + " disabled.");
 	}
