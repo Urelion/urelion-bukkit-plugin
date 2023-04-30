@@ -218,7 +218,7 @@
 	</profiles>
 
 	<modules>
-		<module>bukkit-plugin-parent</module>
 		<module>bukkit-plugin-base</module>
+		<module>bukkit-plugin-parent</module>
 	</modules>
 </project>
