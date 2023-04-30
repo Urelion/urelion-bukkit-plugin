@@ -79,6 +79,7 @@
 		</repository>
 		<repository>
 			<id>papermc</id>
+			<name>PaperMC</name>
 			<url>https://repo.papermc.io/repository/maven-public</url>
 		</repository>
 		<repository>
