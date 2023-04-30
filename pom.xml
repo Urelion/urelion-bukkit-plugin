@@ -38,11 +38,13 @@
 		<plugin.name>${project.artifactId}</plugin.name>
 		<mainClass.localPath>${plugin.name}Plugin</mainClass.localPath>
 		<bukkit.api.version>1.17</bukkit.api.version>
+		<minecraft.base.version>1.19</minecraft.base.version>
 
 		<!-- dependency versions -->
-		<spigot.version>1.19.4-R0.1-SNAPSHOT</spigot.version>
+		<spigot.version>${minecraft.base.version}.4-R0.1-SNAPSHOT</spigot.version>
 		<bstats.version>3.0.2</bstats.version>
 		<vault.version>1.7.1</vault.version>
+		<mockbukkit.version>3.0.0</mockbukkit.version>
 		<watchwolf.version>0.1.16</watchwolf.version>
 
 		<!-- JavaDoc URLs -->
@@ -75,6 +77,11 @@
 			<id>spigot</id>
 			<name>Spigot</name>
 			<url>https://hub.spigotmc.org/nexus/content/groups/public</url>
+		</repository>
+		<repository>
+			<id>papermc</id>
+			<name>PaperMC</name>
+			<url>https://repo.papermc.io/repository/maven-public</url>
 		</repository>
 		<repository>
 			<!-- used for VaultAPI -->
@@ -133,6 +140,12 @@
 		</dependency>
 
 		<!-- test dependencies -->
+		<dependency>
+			<groupId>com.github.seeseemelk</groupId>
+			<artifactId>MockBukkit-v${minecraft.base.version}</artifactId>
+			<version>${mockbukkit.version}</version>
+			<scope>test</scope>
+		</dependency>
 		<dependency>
 			<groupId>com.github.rogermiranda1000</groupId>
 			<artifactId>WatchWolf-Tester</artifactId>
