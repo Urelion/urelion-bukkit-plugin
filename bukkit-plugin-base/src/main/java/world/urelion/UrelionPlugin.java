@@ -1,13 +1,27 @@
 package world.urelion;
 
 import lombok.extern.slf4j.Slf4j;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 import proguard.annotation.Keep;
 
+/**
+ * base of any {@link UrelionPlugin}
+ *
+ * @since 2.0.0
+ */
 @Slf4j
 @Keep
 public abstract class UrelionPlugin
 extends JavaPlugin {
+	/**
+	 * defines the {@link UrelionPlugin} loading process<br>
+	 * Don't override! Use {@link UrelionPlugin#whileLoad()} instead.
+	 *
+	 * @see UrelionPlugin#whileLoad()
+	 *
+	 * @since 2.0.0
+	 */
 	@Override
 	public void onLoad() {
 		UrelionPlugin.log.trace(
@@ -21,6 +35,14 @@ extends JavaPlugin {
 		UrelionPlugin.log.debug("Plugin loading finished.");
 	}
 
+	/**
+	 * defines the {@link UrelionPlugin} enabling process<br>
+	 * Don't override! Use {@link UrelionPlugin#whileEnable()} instead.
+	 *
+	 * @see UrelionPlugin#whileEnable()
+	 *
+	 * @since 2.0.0
+	 */
 	@Override
 	public void onEnable() {
 		UrelionPlugin.log.trace(
@@ -36,6 +58,14 @@ extends JavaPlugin {
 		UrelionPlugin.log.debug("Plugin enabling finished.");
 	}
 
+	/**
+	 * defines the {@link UrelionPlugin} disabling process<br>
+	 * Don't override! Use {@link UrelionPlugin#whileDisable()} instead.
+	 *
+	 * @see UrelionPlugin#whileDisable()
+	 *
+	 * @since 2.0.0
+	 */
 	@Override
 	public void onDisable() {
 		UrelionPlugin.log.trace(
@@ -51,6 +81,15 @@ extends JavaPlugin {
 		UrelionPlugin.log.debug("Plugin disabling finished.");
 	}
 
+	/**
+	 * process the basic {@link UrelionPlugin} initialization,
+	 * before {@link Plugin} specific loading
+	 *
+	 * @see UrelionPlugin#whileLoad()
+	 * @see UrelionPlugin#afterLoad()
+	 *
+	 * @since 2.0.0
+	 */
 	@Keep
 	public void beforeLoad() {
 		UrelionPlugin.log.info("Loading " + this.getName() + "...");
@@ -59,6 +98,14 @@ extends JavaPlugin {
 		super.onLoad();
 	}
 
+	/**
+	 * process {@link Plugin} specific loading
+	 *
+	 * @see UrelionPlugin#beforeLoad()
+	 * @see UrelionPlugin#afterLoad()
+	 *
+	 * @since 2.0.0
+	 */
 	@Keep
 	public void whileLoad() {
 		UrelionPlugin.log.debug(
@@ -66,11 +113,28 @@ extends JavaPlugin {
 		);
 	}
 
+	/**
+	 * finishing the {@link Plugin} loading process
+	 *
+	 * @see UrelionPlugin#beforeLoad()
+	 * @see UrelionPlugin#afterLoad()
+	 *
+	 * @since 2.0.0
+	 */
 	@Keep
 	public void afterLoad() {
 		UrelionPlugin.log.info(this.getName() + " loaded.");
 	}
 
+	/**
+	 * process the basic {@link UrelionPlugin} initialization,
+	 * before {@link Plugin} specific enabling
+	 *
+	 * @see UrelionPlugin#whileEnable()
+	 * @see UrelionPlugin#afterEnable()
+	 *
+	 * @since 2.0.0
+	 */
 	@Keep
 	public void beforeEnable() {
 		UrelionPlugin.log.info("Enabling " + this.getName() + "...");
@@ -79,6 +143,14 @@ extends JavaPlugin {
 		super.onEnable();
 	}
 
+	/**
+	 * process {@link Plugin} specific enabling
+	 *
+	 * @see UrelionPlugin#beforeEnable()
+	 * @see UrelionPlugin#afterEnable()
+	 *
+	 * @since 2.0.0
+	 */
 	@Keep
 	public void whileEnable() {
 		UrelionPlugin.log.debug(
@@ -86,11 +158,28 @@ extends JavaPlugin {
 		);
 	}
 
+	/**
+	 * finishing the {@link Plugin} enabling process
+	 *
+	 * @see UrelionPlugin#beforeEnable()
+	 * @see UrelionPlugin#afterEnable()
+	 *
+	 * @since 2.0.0
+	 */
 	@Keep
 	public void afterEnable() {
 		UrelionPlugin.log.info(this.getName() + " enabled.");
 	}
 
+	/**
+	 * process the basic {@link UrelionPlugin} initialization,
+	 * before {@link Plugin} specific disabling
+	 *
+	 * @see UrelionPlugin#whileDisable()
+	 * @see UrelionPlugin#afterDisable()
+	 *
+	 * @since 2.0.0
+	 */
 	@Keep
 	public void beforeDisable() {
 		UrelionPlugin.log.info("Disabling " + this.getName() + "...");
@@ -99,6 +188,14 @@ extends JavaPlugin {
 		super.onDisable();
 	}
 
+	/**
+	 * process {@link Plugin} specific disabling
+	 *
+	 * @see UrelionPlugin#beforeDisable()
+	 * @see UrelionPlugin#afterDisable()
+	 *
+	 * @since 2.0.0
+	 */
 	@Keep
 	public void whileDisable() {
 		UrelionPlugin.log.debug(
@@ -106,6 +203,14 @@ extends JavaPlugin {
 		);
 	}
 
+	/**
+	 * finishing the {@link Plugin} disabling process
+	 *
+	 * @see UrelionPlugin#beforeDisable()
+	 * @see UrelionPlugin#afterDisable()
+	 *
+	 * @since 2.0.0
+	 */
 	@Keep
 	public void afterDisable() {
 		UrelionPlugin.log.info(this.getName() + " disabled.");
