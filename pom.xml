@@ -39,6 +39,7 @@
 		<mainClass.localPath>${plugin.name}Plugin</mainClass.localPath>
 		<bukkit.api.version>1.17</bukkit.api.version>
 		<minecraft.base.version>1.19</minecraft.base.version>
+		<permission.namespace>${java.package}</permission.namespace>
 
 		<!-- dependency versions -->
 		<spigot.version>${minecraft.base.version}.4-R0.1-SNAPSHOT</spigot.version>
