@@ -16,7 +16,7 @@ maven_build:
         - *maven_init
     script: mvn -B clean install deploy site-deploy -DfullBuild -s ci_settings.xml
     only:
-        - /^(main)|(version\/[^/]+)$/
+        - /^(version\/[^/]+)$/
 
 maven_release:
     image: maven:3-jdk-8
