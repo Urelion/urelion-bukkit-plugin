@@ -47,6 +47,8 @@
 		<bstats.version>3.0.2</bstats.version>
 		<vault.version>1.7.1</vault.version>
 		<mockbukkit.version>3.19.0</mockbukkit.version>
+		<!-- added to solve Cxeb68d52e-5509 -->
+		<maven-resolver-transport.version>1.9.15</maven-resolver-transport.version>
 
 		<!-- JavaDoc URLs -->
 		<spigot.javadoc-url>https://hub.spigotmc.org/javadocs/bukkit</spigot.javadoc-url>
@@ -146,6 +148,12 @@
 			<artifactId>MockBukkit-v${minecraft.base.version}</artifactId>
 			<version>${mockbukkit.version}</version>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<!-- added to solve Cxeb68d52e-5509 -->
+			<groupId>org.apache.maven.resolver</groupId>
+			<artifactId>maven-resolver-transport-http</artifactId>
+			<version>${maven-resolver-transport.version}</version>
 		</dependency>
 	</dependencies>
 
