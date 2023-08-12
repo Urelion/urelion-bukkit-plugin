@@ -244,7 +244,18 @@ extends JavaPlugin {
 		UrelionPlugin.log.info(this.getName() + " disabled.");
 	}
 
-	public void setbStatsPluginId(final int bStatsPluginId) {
+	/**
+	 * sets the bStats plugin identifier
+	 *
+	 * @param bStatsPluginId the bStats {@link Plugin} identifier
+	 *
+	 * @throws IllegalArgumentException if the given {@link Plugin} identifier
+	 *                                  is invalid
+	 *
+	 * @since 2.0.0
+	 */
+	public void setbStatsPluginId(final int bStatsPluginId)
+	throws IllegalArgumentException {
 		UrelionPlugin.log.debug(
 			"Set the bStats plugin identifier to " + bStatsPluginId + "."
 		);
