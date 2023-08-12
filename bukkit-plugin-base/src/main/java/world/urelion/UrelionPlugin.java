@@ -3,8 +3,10 @@ package world.urelion;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.bstats.bukkit.Metrics;
+import org.bstats.charts.SimplePie;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.jetbrains.annotations.NotNull;
 import proguard.annotation.Keep;
 
 import javax.annotation.Nullable;
@@ -243,7 +245,7 @@ extends JavaPlugin {
 	 * @param bStatsPluginId the {@link Plugin} identifier on bStats
 	 *
 	 * @throws IllegalArgumentException if the {@link Plugin} identifier
-	 * 									is invalid
+	 *                                  is invalid
 	 *
 	 * @since 2.0.0
 	 */
@@ -254,6 +256,16 @@ extends JavaPlugin {
 				"The given plugin identifier is invalid: " + bStatsPluginId
 			);
 		}
-		this.metrics = new Metrics(this, bStatsPluginId);
+
+		final @NotNull Metrics metrics = new Metrics(
+			this,
+			bStatsPluginId
+		);
+		metrics.addCustomChart(new SimplePie(
+			"enabled",
+			() -> String.valueOf(this.isEnabled())
+		));
+
+		this.metrics = metrics;
 	}
 }
