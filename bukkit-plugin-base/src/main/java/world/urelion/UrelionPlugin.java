@@ -1,9 +1,13 @@
 package world.urelion;
 
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
+import org.bstats.bukkit.Metrics;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 import proguard.annotation.Keep;
+
+import javax.annotation.Nullable;
 
 /**
  * base of any {@link UrelionPlugin}
@@ -14,6 +18,21 @@ import proguard.annotation.Keep;
 @Keep
 public abstract class UrelionPlugin
 extends JavaPlugin {
+	/**
+	 * the {@link Plugin} identifier on the bStats platform
+	 *
+	 * @since 2.0.0
+	 */
+	@Getter
+	private           int     bStatsPluginId = -1;
+	/**
+	 * the bStats {@link Metrics} of the {@link Plugin}
+	 *
+	 * @since 2.0.0
+	 */
+	@Getter
+	private @Nullable Metrics metrics        = null;
+
 	/**
 	 * defines the {@link UrelionPlugin} loading process<br>
 	 * Don't override! Use {@link UrelionPlugin#whileLoad()} instead.
@@ -30,7 +49,9 @@ extends JavaPlugin {
 		this.beforeLoad();
 		UrelionPlugin.log.trace("Call sequence to process plugin loading.");
 		this.whileLoad();
-		UrelionPlugin.log.trace("Call sequence to process after plugin loading.");
+		UrelionPlugin.log.trace(
+			"Call sequence to process after plugin loading."
+		);
 		this.afterLoad();
 		UrelionPlugin.log.debug("Plugin loading finished.");
 	}
@@ -214,5 +235,25 @@ extends JavaPlugin {
 	@Keep
 	public void afterDisable() {
 		UrelionPlugin.log.info(this.getName() + " disabled.");
+	}
+
+	/**
+	 * creates a bStats {@link Metrics} for statistics
+	 *
+	 * @param bStatsPluginId the {@link Plugin} identifier on bStats
+	 *
+	 * @throws IllegalArgumentException if the {@link Plugin} identifier
+	 * 									is invalid
+	 *
+	 * @since 2.0.0
+	 */
+	private void createMetrics(final int bStatsPluginId)
+	throws IllegalArgumentException {
+		if (bStatsPluginId <= 0) {
+			throw new IllegalArgumentException(
+				"The given plugin identifier is invalid: " + bStatsPluginId
+			);
+		}
+		this.metrics = new Metrics(this, bStatsPluginId);
 	}
 }
