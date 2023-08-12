@@ -259,7 +259,7 @@ extends JavaPlugin {
 	 *
 	 * @since 2.0.0
 	 */
-	public void setbStatsPluginId(final int bStatsPluginId)
+	protected void setbStatsPluginId(final int bStatsPluginId)
 	throws IllegalArgumentException {
 		UrelionPlugin.log.debug(
 			"Set the bStats plugin identifier to " + bStatsPluginId + "."
