@@ -261,10 +261,14 @@ extends JavaPlugin {
 			this,
 			bStatsPluginId
 		);
-		metrics.addCustomChart(new SimplePie(
+		/*
+		 * Is not possible, because the metrics will only be sent,
+		 * if the plugin is enabled.
+		 */
+		/* metrics.addCustomChart(new SimplePie(
 			"enabled",
 			() -> String.valueOf(this.isEnabled())
-		));
+		)); */
 
 		this.metrics = metrics;
 	}
