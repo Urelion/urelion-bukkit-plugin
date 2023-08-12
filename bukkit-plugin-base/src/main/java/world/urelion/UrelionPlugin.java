@@ -1,13 +1,13 @@
 package world.urelion;
 
 import com.google.common.collect.Sets;
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.bstats.bukkit.Metrics;
 import org.bstats.charts.DrilldownPie;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.graalvm.compiler.core.common.SuppressFBWarnings;
 import org.jetbrains.annotations.NotNull;
 import proguard.annotation.Keep;
 
