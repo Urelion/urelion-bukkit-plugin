@@ -1,15 +1,20 @@
 package world.urelion;
 
+import com.google.common.collect.Sets;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.bstats.bukkit.Metrics;
-import org.bstats.charts.SimplePie;
+import org.bstats.charts.DrilldownPie;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
 import proguard.annotation.Keep;
 
 import javax.annotation.Nullable;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeSet;
 
 /**
  * base of any {@link UrelionPlugin}
@@ -239,6 +244,15 @@ extends JavaPlugin {
 		UrelionPlugin.log.info(this.getName() + " disabled.");
 	}
 
+	public void setbStatsPluginId(final int bStatsPluginId) {
+		UrelionPlugin.log.debug(
+			"Set the bStats plugin identifier to " + bStatsPluginId + "."
+		);
+		this.bStatsPluginId = bStatsPluginId;
+		UrelionPlugin.log.debug("Create bStats Metrics.");
+		this.createMetrics(bStatsPluginId);
+	}
+
 	/**
 	 * creates a bStats {@link Metrics} for statistics
 	 *
@@ -251,25 +265,96 @@ extends JavaPlugin {
 	 */
 	private void createMetrics(final int bStatsPluginId)
 	throws IllegalArgumentException {
+		UrelionPlugin.log.debug(
+			"Check if the bStats plugin identifier is valid."
+		);
 		if (bStatsPluginId <= 0) {
-			throw new IllegalArgumentException(
-				"The given plugin identifier is invalid: " + bStatsPluginId
-			);
+			final String errorMessage =
+				"The given plugin identifier is invalid: " + bStatsPluginId;
+			UrelionPlugin.log.error(errorMessage);
+			throw new IllegalArgumentException(errorMessage);
 		}
 
+		UrelionPlugin.log.debug("Create bStats Metrics.");
 		final @NotNull Metrics metrics = new Metrics(
 			this,
 			bStatsPluginId
 		);
+
 		/*
 		 * Is not possible, because the metrics will only be sent,
 		 * if the plugin is enabled.
 		 */
-		/* metrics.addCustomChart(new SimplePie(
+		/*
+		UrelionPlugin.log.debug("Create pie chart of plugin enabling.");
+		metrics.addCustomChart(new SimplePie(
 			"enabled",
 			() -> String.valueOf(this.isEnabled())
-		)); */
+		));
+		*/
 
+		UrelionPlugin.log.trace("Define level categories of max players.");
+		final Set<Integer> maxPlayerCategories = (
+			new TreeSet<>(Sets.newHashSet(1, 5, 10, 25, 50, 100))
+		).descendingSet();
+
+		UrelionPlugin.log.debug("Create pie chart of max players.");
+		metrics.addCustomChart(new DrilldownPie("maxPlayers", () -> {
+			UrelionPlugin.log.trace("Define overall map of the chart values.");
+			final Map<String, Map<String, Integer>> overallMap =
+				new HashMap<>();
+			UrelionPlugin.log.trace("Get max players of server.");
+			final int maxPlayers = this.getServer().getMaxPlayers();
+			UrelionPlugin.log.trace("Set max value as highest limit.");
+			int upperLimit = Integer.MAX_VALUE;
+			UrelionPlugin.log.trace("Iterate over all max player categories.");
+			for (int lowerLimit : maxPlayerCategories) {
+				UrelionPlugin.log.trace(
+					"Check if the max player setting " +
+					"is in the current category."
+				);
+				if (maxPlayers >= lowerLimit) {
+					UrelionPlugin.log.trace(
+						"Create new inner map of the fixed max player setting."
+					);
+					Map<String, Integer> innerMap = new HashMap<>();
+					UrelionPlugin.log.trace(
+						"Set max player setting to chart value."
+					);
+					innerMap.put(String.valueOf(maxPlayers), 1);
+
+					UrelionPlugin.log.trace("Define category range as name.");
+					final String categoryRange;
+					UrelionPlugin.log.trace(
+						"Check if category is the highest category."
+					);
+					if (upperLimit < Integer.MAX_VALUE) {
+						UrelionPlugin.log.trace(
+							"Create name of normal category."
+						);
+						categoryRange = lowerLimit + " - " + upperLimit;
+					} else {
+						UrelionPlugin.log.trace(
+							"Create name of highest category."
+						);
+						categoryRange = "> " + lowerLimit;
+					}
+
+					UrelionPlugin.log.trace("Add value to chart.");
+					overallMap.put(categoryRange, innerMap);
+					UrelionPlugin.log.trace("Stop category search.");
+					break;
+				}
+				UrelionPlugin.log.trace(
+					"Set lower limit as next upper limit."
+				);
+				upperLimit = lowerLimit;
+			}
+			UrelionPlugin.log.trace("Return chart values.");
+			return overallMap;
+		}));
+
+		UrelionPlugin.log.trace("Set bStats Metrics.");
 		this.metrics = metrics;
 	}
 }
