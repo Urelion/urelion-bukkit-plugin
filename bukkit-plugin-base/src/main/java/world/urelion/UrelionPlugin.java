@@ -10,6 +10,9 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
 import proguard.annotation.Keep;
+import proguard.annotation.KeepPublicClassMembers;
+import proguard.annotation.KeepPublicGettersSetters;
+import proguard.annotation.KeepPublicProtectedClassMembers;
 
 import javax.annotation.Nullable;
 import java.util.HashMap;
@@ -24,6 +27,9 @@ import java.util.TreeSet;
  */
 @Slf4j
 @Keep
+@KeepPublicGettersSetters
+@KeepPublicClassMembers
+@KeepPublicProtectedClassMembers
 public abstract class UrelionPlugin
 extends JavaPlugin {
 	/**
@@ -123,7 +129,6 @@ extends JavaPlugin {
 	 *
 	 * @since 2.0.0
 	 */
-	@Keep
 	public void beforeLoad() {
 		UrelionPlugin.log.info("Loading " + this.getName() + "...");
 
@@ -139,7 +144,6 @@ extends JavaPlugin {
 	 *
 	 * @since 2.0.0
 	 */
-	@Keep
 	public void whileLoad() {
 		UrelionPlugin.log.debug(
 			this.getName() + " has no specific loading sequence!"
@@ -154,7 +158,6 @@ extends JavaPlugin {
 	 *
 	 * @since 2.0.0
 	 */
-	@Keep
 	public void afterLoad() {
 		UrelionPlugin.log.info(this.getName() + " loaded.");
 	}
@@ -168,7 +171,6 @@ extends JavaPlugin {
 	 *
 	 * @since 2.0.0
 	 */
-	@Keep
 	public void beforeEnable() {
 		UrelionPlugin.log.info("Enabling " + this.getName() + "...");
 
@@ -184,7 +186,6 @@ extends JavaPlugin {
 	 *
 	 * @since 2.0.0
 	 */
-	@Keep
 	public void whileEnable() {
 		UrelionPlugin.log.debug(
 			this.getName() + " has no specific enabling sequence!"
@@ -199,7 +200,6 @@ extends JavaPlugin {
 	 *
 	 * @since 2.0.0
 	 */
-	@Keep
 	public void afterEnable() {
 		UrelionPlugin.log.info(this.getName() + " enabled.");
 	}
@@ -213,7 +213,6 @@ extends JavaPlugin {
 	 *
 	 * @since 2.0.0
 	 */
-	@Keep
 	public void beforeDisable() {
 		UrelionPlugin.log.info("Disabling " + this.getName() + "...");
 
@@ -229,7 +228,6 @@ extends JavaPlugin {
 	 *
 	 * @since 2.0.0
 	 */
-	@Keep
 	public void whileDisable() {
 		UrelionPlugin.log.debug(
 			this.getName() + " has no specific disabling sequence!"
@@ -244,7 +242,6 @@ extends JavaPlugin {
 	 *
 	 * @since 2.0.0
 	 */
-	@Keep
 	public void afterDisable() {
 		UrelionPlugin.log.info(this.getName() + " disabled.");
 	}
