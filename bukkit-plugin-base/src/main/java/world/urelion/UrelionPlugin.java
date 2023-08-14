@@ -259,8 +259,9 @@ extends JavaPlugin {
 	 *
 	 * @since 2.0.0
 	 */
-	protected void setbStatsPluginId(final int bStatsPluginId)
-	throws IllegalArgumentException {
+	protected void setbStatsPluginId(
+		final int bStatsPluginId
+	) throws IllegalArgumentException {
 		UrelionPlugin.log.debug(
 			"Set the bStats plugin identifier to " + bStatsPluginId + "."
 		);
@@ -279,13 +280,14 @@ extends JavaPlugin {
 	 *
 	 * @since 2.0.0
 	 */
-	private void createMetrics(final int bStatsPluginId)
-	throws IllegalArgumentException {
+	private void createMetrics(
+		final int bStatsPluginId
+	) throws IllegalArgumentException {
 		UrelionPlugin.log.debug(
 			"Check if the bStats plugin identifier is valid."
 		);
 		if (bStatsPluginId <= 0) {
-			final String errorMessage =
+			final @NotNull String errorMessage =
 				"The given plugin identifier is invalid: " + bStatsPluginId;
 			UrelionPlugin.log.error(errorMessage);
 			throw new IllegalArgumentException(errorMessage);
@@ -310,21 +312,21 @@ extends JavaPlugin {
 		*/
 
 		UrelionPlugin.log.trace("Define level categories of max players.");
-		final Set<Integer> maxPlayerCategories = (
+		final @NotNull Set<Integer> maxPlayerCategories = (
 			new TreeSet<>(Sets.newHashSet(1, 5, 10, 25, 50, 100))
 		).descendingSet();
 
 		UrelionPlugin.log.debug("Create pie chart of max players.");
 		metrics.addCustomChart(new DrilldownPie("maxPlayers", () -> {
 			UrelionPlugin.log.trace("Define overall map of the chart values.");
-			final Map<String, Map<String, Integer>> overallMap =
+			final @NotNull Map<String, Map<String, Integer>> overallMap =
 				new HashMap<>();
 			UrelionPlugin.log.trace("Get max players of server.");
 			final int maxPlayers = this.getServer().getMaxPlayers();
 			UrelionPlugin.log.trace("Set max value as highest limit.");
 			int upperLimit = Integer.MAX_VALUE;
 			UrelionPlugin.log.trace("Iterate over all max player categories.");
-			for (int lowerLimit : maxPlayerCategories) {
+			for (final int lowerLimit : maxPlayerCategories) {
 				UrelionPlugin.log.trace(
 					"Check if the max player setting " +
 					"is in the current category."
@@ -333,7 +335,8 @@ extends JavaPlugin {
 					UrelionPlugin.log.trace(
 						"Create new inner map of the fixed max player setting."
 					);
-					Map<String, Integer> innerMap = new HashMap<>();
+					final @NotNull Map<String, Integer> innerMap =
+						new HashMap<>();
 					UrelionPlugin.log.trace(
 						"Set max player setting to chart value."
 					);
