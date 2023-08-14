@@ -59,10 +59,6 @@ extends JavaPlugin {
 			"Call sequence to process before plugin loading."
 		);
 		this.beforeLoad();
-		UrelionPlugin.log.trace(
-			"Call default loading sequence from super class."
-		);
-		super.onLoad();
 		UrelionPlugin.log.trace("Call sequence to process plugin loading.");
 		this.whileLoad();
 		UrelionPlugin.log.trace(
@@ -86,10 +82,6 @@ extends JavaPlugin {
 			"Call sequence to process before plugin enabling."
 		);
 		this.beforeEnable();
-		UrelionPlugin.log.trace(
-			"Call default enabling sequence from super class."
-		);
-		super.onEnable();
 		UrelionPlugin.log.trace("Call sequence to process plugin enabling.");
 		this.whileEnable();
 		UrelionPlugin.log.trace(
@@ -113,10 +105,6 @@ extends JavaPlugin {
 			"Call sequence to process before plugin disabling."
 		);
 		this.beforeDisable();
-		UrelionPlugin.log.trace(
-			"Call default disabling sequence from super class."
-		);
-		super.onDisable();
 		UrelionPlugin.log.trace("Call sequence to process plugin disabling.");
 		this.whileDisable();
 		UrelionPlugin.log.trace(
@@ -373,9 +361,7 @@ extends JavaPlugin {
 					UrelionPlugin.log.trace("Stop category search.");
 					break;
 				}
-				UrelionPlugin.log.trace(
-					"Set lower limit as next upper limit."
-				);
+				UrelionPlugin.log.trace("Set lower limit as next upper limit.");
 				upperLimit = lowerLimit;
 			}
 			UrelionPlugin.log.trace("Return chart values.");
