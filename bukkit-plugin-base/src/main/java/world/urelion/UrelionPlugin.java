@@ -256,6 +256,7 @@ extends JavaPlugin {
 	 *
 	 * @since 2.0.0
 	 */
+	@Keep
 	protected void setbStatsPluginId(
 		final int bStatsPluginId
 	) throws IllegalArgumentException {
