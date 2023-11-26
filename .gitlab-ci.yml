@@ -23,7 +23,7 @@ maven_release:
     before_script:
         - *maven_init
     script:
-        - git checkout -B "${CI_BUILD_REF_NAME}"
+        - git checkout -B "${CI_COMMIT_REF_NAME}"
         - mvn -B clean release:prepare release:perform -DfullBuild -s ci_settings.xml -Dusername=${ci_git_user} -Dpassword=${ci_git_token} -DignoreSnapshots=true
     only:
         - /^(release)|(version\/release\/[^/]+)$/
