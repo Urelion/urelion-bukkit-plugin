@@ -46,9 +46,9 @@
 		<spigot.version>${minecraft.base.version}.1-R0.1-SNAPSHOT</spigot.version>
 		<bstats.version>3.0.2</bstats.version>
 		<vault.version>1.7.1</vault.version>
-		<mockbukkit.version>3.43.0</mockbukkit.version>
+		<mockbukkit.version>3.47.0</mockbukkit.version>
 		<!-- added to solve Cxeb68d52e-5509 -->
-		<maven-resolver-transport.version>1.9.16</maven-resolver-transport.version>
+		<maven-resolver-transport.version>1.9.18</maven-resolver-transport.version>
 
 		<!-- JavaDoc URLs -->
 		<spigot.javadoc-url>https://hub.spigotmc.org/javadocs/bukkit</spigot.javadoc-url>
