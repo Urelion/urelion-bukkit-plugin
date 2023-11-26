@@ -11,7 +11,7 @@ variables:
     MAVEN_OPTS: "-Dorg.slf4j.simpleLogger.showDateTime=true -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss,SSS"
 
 maven_build:
-    image:  maven:3-jdk-8
+    image:  maven:3-jdk-11
     before_script:
         - *maven_init
     script: mvn -B clean deploy site-deploy -DfullBuild -s ci_settings.xml
@@ -19,7 +19,7 @@ maven_build:
         - /^(version\/[^/]+)$/
 
 maven_release:
-    image: maven:3-jdk-8
+    image: maven:3-jdk-11
     before_script:
         - *maven_init
     script:
@@ -39,7 +39,7 @@ maven_release:
 sast:
     stage: test
     variables:
-        SAST_JAVA_VERSION: 8
+        SAST_JAVA_VERSION: 11
 
 include:
     - template: Security/SAST.gitlab-ci.yml
