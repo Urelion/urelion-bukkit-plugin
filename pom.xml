@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>me.chrisswr1</groupId>
 		<artifactId>java-parent</artifactId>
-		<version>2.1.0</version>
+		<version>2.1.1</version>
 	</parent>
 
 	<!-- project identifier -->
@@ -43,10 +43,10 @@
 		<permission.namespace.plugin>${permission.namespace.base}.${java.package}</permission.namespace.plugin>
 
 		<!-- dependency versions -->
-		<spigot.version>${minecraft.base.version}.1-R0.1-SNAPSHOT</spigot.version>
+		<spigot.version>${minecraft.base.version}.3-R0.1-SNAPSHOT</spigot.version>
 		<bstats.version>3.0.2</bstats.version>
 		<vault.version>1.7.1</vault.version>
-		<mockbukkit.version>3.47.0</mockbukkit.version>
+		<mockbukkit.version>3.58.0</mockbukkit.version>
 		<!-- added to solve Cxeb68d52e-5509 -->
 		<maven-resolver-transport.version>1.9.18</maven-resolver-transport.version>
 
