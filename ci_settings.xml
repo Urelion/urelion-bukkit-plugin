@@ -23,6 +23,10 @@
 			<id>gpg.passphrase</id>
 			<passphrase>${env.gpg_passphrase}</passphrase>
 		</server>
+		<server>
+			<id>nvd.apikey</id>
+			<password>${env.nvd_api_key}</password>
+		</server>
 	</servers>
 
 	<profiles>
