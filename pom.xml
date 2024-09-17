@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
 		<groupId>me.chrisswr1</groupId>
 		<artifactId>java-parent</artifactId>
-		<version>2.1.2</version>
+		<version>2.1.3</version>
 	</parent>
 
 	<!-- project identifier -->
@@ -33,21 +35,22 @@
 		<project.module-root.relativedir>./</project.module-root.relativedir>
 
 		<!-- project-specific properties -->
+		<java.version>21</java.version>
 		<plugin.name>${project.artifactId}</plugin.name>
 		<mainClass.localPath>${plugin.name}Plugin</mainClass.localPath>
 		<bukkit.api.version>1.17</bukkit.api.version>
-		<minecraft.base.version>1.20</minecraft.base.version>
+		<minecraft.base.version>1.21</minecraft.base.version>
 		<permission.namespace.base>urelion</permission.namespace.base>
 		<permission.namespace.plugin>${permission.namespace.base}.${java.package}</permission.namespace.plugin>
 
 		<!-- dependency versions -->
-		<spigot.version>${minecraft.base.version}.3-R0.1-SNAPSHOT</spigot.version>
-		<bstats.version>3.0.2</bstats.version>
+		<spigot.version>${minecraft.base.version}.1-R0.1-SNAPSHOT</spigot.version>
+		<bstats.version>3.0.3</bstats.version>
 		<vault.version>1.7.1</vault.version>
-		<mockbukkit.version>3.58.0</mockbukkit.version>
+		<mockbukkit.version>3.127.1</mockbukkit.version>
 		<watchwolf.version>0.1.16</watchwolf.version>
 		<!-- added to solve Cxeb68d52e-5509 -->
-		<maven-resolver-transport.version>1.9.18</maven-resolver-transport.version>
+		<maven-resolver-transport.version>1.9.22</maven-resolver-transport.version>
 
 		<!-- JavaDoc URLs -->
 		<spigot.javadoc-url>https://hub.spigotmc.org/javadocs/bukkit</spigot.javadoc-url>
