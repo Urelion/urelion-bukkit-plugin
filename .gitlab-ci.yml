@@ -11,7 +11,7 @@ variables:
     MAVEN_OPTS: "-Dorg.slf4j.simpleLogger.showDateTime=true -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss,SSS"
 
 maven_build:
-    image:  maven:3-jdk-11
+    image:  maven:3-jdk-21
     before_script:
         - *maven_init
     script: mvn -B clean deploy site-deploy -DfullBuild -s ci_settings.xml
