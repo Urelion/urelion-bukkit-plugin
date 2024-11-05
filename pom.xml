@@ -44,7 +44,7 @@
 		<permission.namespace.plugin>${permission.namespace.base}.${java.package}</permission.namespace.plugin>
 
 		<!-- dependency versions -->
-		<spigot.version>${minecraft.base.version}.1-R0.1-SNAPSHOT</spigot.version>
+		<spigot.version>${minecraft.base.version}.3-R0.1-SNAPSHOT</spigot.version>
 		<bstats.version>3.1.0</bstats.version>
 		<vault.version>1.7.1</vault.version>
 		<mockbukkit.version>3.133.2</mockbukkit.version>
