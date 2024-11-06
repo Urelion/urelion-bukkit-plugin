@@ -6,9 +6,9 @@ name: Maven - Default Build
 on:
     # Triggers the workflow on push or pull request events but only for version branches
     push:
-        branches: ["/^(version\/[^/]+)$/"]
+        branches: ["version/.*"]
     pull_request:
-        branches: ["/^(version\/[^/]+)$/"]
+        branches: ["version/.*"]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
