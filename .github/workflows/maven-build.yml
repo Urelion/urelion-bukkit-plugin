@@ -37,4 +37,6 @@ jobs:
                 name: Build with Maven
                 run:  mvn -B clean deploy site-deploy -DfullBuild -s $GITHUB_WORKSPACE/ci_settings.xml --file pom.xml
                 env:
-                    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                    GITHUB_TOKEN:         ${{ secrets.GITHUB_TOKEN }}
+                    MAVEN_GPG_PASSPHRASE: ${{ secrets.RELEASES_GPG_PASSPHRASE }}
+                    MAVEN_GPG_KEY:        ${{ secrets.RELEASES_GPG_PRIVATE_KEY }}
