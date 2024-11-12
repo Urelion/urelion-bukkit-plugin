@@ -27,11 +27,13 @@ jobs:
                 name: Set up JDK 21
                 uses: actions/setup-java@v4
                 with:
-                    distribution:  'temurin'
-                    java-version:  '21'
-                    cache:         maven
-                    server-id:     general-parent # Value of the distributionManagement/repository/id field of the pom.xml
-                    settings-path: ${{ github.workspace }} # location for the settings.xml file
+                    distribution:    'temurin'
+                    java-version:    '21'
+                    cache:           maven
+                    server-id:       project-repo # Value of the distributionManagement/repository/id field of the pom.xml
+                    settings-path:   ${{ github.workspace }} # location for the settings.xml file
+                    gpg-passphrase:  'gpg_passphrase'
+                    gpg-private-key: ${{ secrets.GPG_SECRET }}
 
             -
                 name: Build with Maven
