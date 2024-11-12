@@ -33,7 +33,7 @@ jobs:
                     server-id:       project-repo # Value of the distributionManagement/repository/id field of the pom.xml
                     settings-path:   ${{ github.workspace }} # location for the settings.xml file
                     gpg-passphrase:  'gpg_passphrase'
-                    gpg-private-key: ${{ secrets.GPG_SECRET }}
+                    gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
 
             -
                 name: Build with Maven
