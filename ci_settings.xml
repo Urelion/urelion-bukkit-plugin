@@ -21,6 +21,11 @@
 			<id>nvd.apikey</id>
 			<password>${env.nvd_api_key}</password>
 		</server>
+		<server>
+			<id>general-parent</id>
+			<username>${env.GITHUB_ACTOR}</username>
+			<password>${env.GITHUB_TOKEN}</password>
+		</server>
 	</servers>
 
 	<profiles>
