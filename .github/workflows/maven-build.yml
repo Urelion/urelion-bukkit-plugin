@@ -35,9 +35,6 @@ jobs:
                     gpg-passphrase:  'gpg_passphrase'
                     gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
             -
-                name: debug settings.xml
-                run:  cat ${{ github.workspace }}/settings.xml
-            -
                 name: Build with Maven
                 run:  mvn -B clean deploy site-deploy -DfullBuild -s ci_settings.xml --file pom.xml
                 env:
