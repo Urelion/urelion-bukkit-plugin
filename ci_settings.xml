@@ -5,14 +5,8 @@
 	<servers>
 		<server>
 			<id>project-repo</id>
-			<configuration>
-				<httpHeaders>
-					<property>
-						<name>Job-Token</name>
-						<value>${env.CI_JOB_TOKEN}</value>
-					</property>
-				</httpHeaders>
-			</configuration>
+			<username>${env.GITHUB_ACTOR}</username>
+			<password>${env.GITHUB_TOKEN}</password>
 		</server>
 		<server>
 			<id>project-site-repo</id>
