@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>me.chrisswr1</groupId>
 		<artifactId>java-parent</artifactId>
-		<version>2.2.0</version>
+		<version>2.3.0</version>
 	</parent>
 
 	<!-- project identifier -->
@@ -58,18 +58,13 @@
 	</properties>
 
 	<scm>
-		<url>https://gitlab.com/${project.organization.name}/${project.module-root.artifactId}</url>
+		<url>https://github.com/${project.organization.name}/${project.module-root.artifactId}</url>
 		<connection>scm:git:${project.scm.url}.git</connection>
 		<developerConnection>${project.scm.connection}</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
 
 	<distributionManagement>
-		<repository>
-			<id>project-repo</id>
-			<name>Project Repository</name>
-			<url>https://maven.pkg.github.com/${project.organization.name}/${project.module-root.artifactId}</url>
-		</repository>
 		<site>
 			<id>project-site-repo</id>
 			<url>${project.site.deploy.url}</url>
@@ -80,7 +75,7 @@
 		<repository>
 			<id>general-parent</id>
 			<name>General Parent</name>
-			<url>https://gitlab.com/api/v4/projects/25831549/packages/maven</url>
+			<url>https://maven.pkg.github.com/ChrissW-R1/general-parent</url>
 		</repository>
 		<repository>
 			<id>spigot</id>
